@@ -1,3 +1,4 @@
+// Thanks Zeeless for letting me use your JS
 const Proxy = document.getElementById("proxyIframe");
 const iframe = document.getElementById("game-iframe");
 function toggleFullscreen() {

@@ -259,34 +259,18 @@ body {
     margin-top: 24px;
 }
 
-.proxy {
-    width: 100%;
-    height: 100%;
-    max-width: none;
-    max-height: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 38px;
-    border: 10px solid #23232b;
-    backdrop-filter: blur(24px) saturate(180%);
-    -webkit-backdrop-filter: blur(24px) saturate(180%);
-    padding: 0;
-    overflow: hidden;
-    background: rgba(20, 20, 24, 0.65);
-    position: relative;
-    box-shadow: 0 8px 40px 0 #000a, 0 0 0 1.5px #7c3aed44 inset;
-}
+
 
 #proxyIframe {
-    width: 19in;
-    height: 8in;
+    width: 15in;
+    height: 7.5in;
+    margin-right: 2in;
     border: none;
     border-radius: 28px;
-    box-shadow: 0 4px 32px 0 rgba(124,58,237,0.13), 0 0 0 1.5px #fff2 inset;
+    box-shadow: 0 4px 32px 0 rgba(124,58,237,0.13);
     transition: box-shadow 0.2s;
     display: block;
-    background: rgba(30,30,36,0.10);
+    background: rgba(0, 0, 122, 0.1);
     z-index: 2;
     position: relative;
 }

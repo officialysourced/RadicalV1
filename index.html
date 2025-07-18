@@ -1,74 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RadicalV1</title>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RadicalV1</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <link rel="stylesheet" href="getajob.css" />
+
+  <script src="loader.js"></script>
+  <script src="/envade/en.config.js"></script>
+  <script src="/envade/en.bundle.js"></script>
+  <script src="/uv/uv.bundle.js"></script>
+  <script src="/uv/uv.config.js"></script>
+  <script src="/scramjet/scramjet.controller.js"></script>
+  <script src="getajob.js"></script>
 </head>
 <body>
-    <div class="leftnavbar">
-        <a href="/index.html" class="navitem" title="Home"><i class="bi bi-house-door"></i></a>
-        <a href="" class="navitem" title="Games"><i class="bi bi-controller"></i></a>
-        <a href="/pages/settings/settings.html" class="navitem" title="Settings"><i class="bi bi-gear"></i></a>
-        <a href="#" class="navitem" title="Partners"><i class="bi bi-people"></i></a>
-        <a href="#" class="navitem" title="Credits"><i class="bi bi-award"></i></a>
-        <a href="/pages/chat/index.html" class="navitem" title="Chat"><i class="bi bi-chat"></i></a>
+  <nav class="leftnavbar">
+    <a href="#" class="navitem active" title="Home"><i class="bi bi-house-door"></i></a>
+    <a href="#" class="navitem" title="Games"><i class="bi bi-controller"></i></a>
+     <a href="/chat/index.html" class="navitem" title="Chat"><i class="bi bi-chat"></i></a>
+    <a href="#" class="navitem" title="Settings"><i class="bi bi-gear"></i></a>
+    <a href="#" class="navitem" title="Partners"><i class="bi bi-people"></i></a>
+    <a href="#" class="navitem" title="Credits"><i class="bi bi-award"></i></a>
+  </nav>
 
+  <div class="tabs-bar" id="tabsBar">
+    <div class="tab active">
+      <i class="bi bi-globe"></i>
+      <span>New Tab</span>
+      <span class="close">&times;</span>
     </div>
-    <div class="tabs-bar" id="tabsBar">
-        <div class="tab active">
-            <i class="bi bi-globe"></i>
-            <span>New Tab</span>
-            <span class="close">&times;</span>
-        </div>
-     
-        <div class="tab add" id="addTabBtn">
-            <span>+</span>
-        </div>
+    <div class="tab add" id="addTabBtn">
+      <span>+</span>
     </div>
-    <div class="search-bar">
-        <button class="search-bar-btn" title="Reload">
-            <i class="bi bi-arrow-clockwise"></i>
-        </button>
-        <button class="search-bar-btn" title="Back">
-            <i class="bi bi-arrow-left"></i>
-        </button>
-        <button class="search-bar-btn" title="Forward">
-            <i class="bi bi-arrow-right"></i>
-        </button>
-    </div>
-     <form id="uv-form" >
-        <input id="uv-search-engine" value="https://duckduckgo.com/search?q=%s" type="hidden" >
-        <input id="uv-address" type="text" placeholder="Enter URL or search term" autocomplete="off" class="search-bar-input-container">
-    </form>
-     <div class="content-wrapper">
-        <div class="proxy">
-            <iframe id="proxyIframe" width="100%" height="600px" frameborder="0"></iframe>
-        </div>
-    </div>
- 
-    <script>
-        const urlParams = new URLSearchParams(window.location.search);
-        const encodedUrl = urlParams.get('url');
+  </div>
 
-        if (encodedUrl) {
-            console.log("Encoded URL from query string:", encodedUrl);
+  <div class="search-bar">
+    <button class="search-bar-btn" id="reloadBtn" title="Reload">
+      <i data-lucide="rotate-ccw"></i>
+    </button>
+    <button class="search-bar-btn" id="backBtn" title="Back">
+      <i data-lucide="arrow-left"></i>
+    </button>
+    <button class="search-bar-btn" id="forwardBtn" title="Forward">
+      <i data-lucide="arrow-right"></i>
+    </button>
 
-            const iframe = document.getElementById("proxyIframe");
-            iframe.src = encodedUrl;
-        } else {
-            console.error("No URL found in the query string.");
-        }
-    </script>
+    <div class="search-bar-input-container">
+      <input type="text" id="input" placeholder="Search..." />
+    </div>
 
-      <script src="/static/uv/uv.bundle.js"></script>
-    <script src="/static/uv/uv.config.js"></script>
-    <script src="/static/register-sw.js"></script>
-    <script src="/static/search.js"></script>
-    <script src="/static/index.js"></script>
-    <script src="getajob.js"></script>
+    <div style="margin-left: 10px;">
+      <select id="proxysel" style="padding: 8px; border-radius: 8px; background: #333; color: #eee; border: 1px solid #555;">
+        <option value="scramjet">Scramjet</option>
+        <option value="uv">UV</option>
+        <option value="envade">Envade</option>
+      </select>
+    </div>
+  </div>
+
+  <script src="baremux/index.js"></script>
+  <iframe id="proxyIframe"></iframe>
+
+  <script>
+    lucide.createIcons();
+  </script>
 </body>
 </html>

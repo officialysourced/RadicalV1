@@ -1,0 +1,196 @@
+body {
+  font-family: 'Rubik', sans-serif;
+  background: radial-gradient(circle at center, #222 0%, #111 100%);
+  color: #e8eaed;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.leftnavbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 72px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 36px;
+  backdrop-filter: blur(32px) saturate(180%);
+  -webkit-backdrop-filter: blur(32px) saturate(180%);
+  border: 1.5px solid rgba(255, 255, 255, 0.13);
+  border-radius: 12px;
+  z-index: 100;
+  transition: width 0.2s ease;
+}
+
+.leftnavbar .navitem {
+  width: 52px;
+  height: 52px;
+  font-size: 2.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f3f3f7;
+  border-radius: 16%;
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+}
+/* i asked ai to help me fix the positioning btw so dont get mad  */
+@media (max-width: 700px) {
+  .leftnavbar {
+    flex-direction: row;
+    height: 64px;
+    width: 100%;
+    top: unset;
+    bottom: 0;
+    border-radius: 20px 20px 0 0;
+    padding: 0 8px;
+    gap: 0;
+    justify-content: center;
+  }
+
+  .leftnavbar .navitem {
+    width: 44px;
+    height: 44px;
+    font-size: 1.7rem;
+    margin: 0 6px;
+  }
+}
+
+.tabs-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  margin-left: 80px;
+  backdrop-filter: blur(25px) saturate(180%);
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  padding: 6px 14px;
+  gap: 8px;
+  font-size: 14px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  cursor: pointer;
+  height: 32px;
+  transition: background 0.2s ease;
+}
+
+.tab.active {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.tab .close {
+  font-size: 16px;
+  color: #bbb;
+  margin-left: 8px;
+  border-radius: 50%;
+  padding: 2px 5px;
+  transition: background 0.2s;
+}
+
+.tab .close:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+
+.tab.add {
+   background: rgba(255,255,255,0.05);
+    color: #fff;
+    font-size: 20px;
+    padding: 0 5px;
+    border-radius: 12px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: none;
+    min-width: 38px;
+    height: 45px;
+    display: flex;
+    transition: background 0.2s ease, border 0.2s ease;
+}
+
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-left: 80px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  padding: 0 20px;
+  flex: 0 0 auto;
+}
+
+/* Button styles */
+.search-bar-btn {
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  cursor: pointer;
+}
+
+.search-bar-btn i {
+  width: 22px;
+  height: 22px;
+}
+
+.search-bar-input-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  height: 40px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s;
+}
+
+.search-bar-input-container input[type="text"] {
+  flex: 1;
+  border: none;
+  background: transparent;
+  color: #fff;
+  font-size: 16px;
+  padding: 0 12px;
+  height: 100%;
+  outline: none;
+}
+
+.search-bar-input-container:focus-within {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+}
+
+#proxyIframe {
+  flex-grow: 1;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 28px;
+  box-shadow: 0 4px 32px rgba(124, 58, 237, 0.13);
+  background: rgba(0, 0, 122, 0.1);
+  position: relative;
+  z-index: 2;
+}

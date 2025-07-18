@@ -1,5 +1,4 @@
-
- //       _ __       _ _ _   
+//       _ __       _ _ _   
 // ___/ |/ /_   __| (_) |__ 
 // / __| | '_ \ / _` | | '_ \ 
 // \__ \ | (_) | (_| | | | | |
@@ -49,7 +48,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   // wisp and transport stuff 
   const connection = new BareMux.BareMuxConnection("/baremux/worker.js");
   const wisp = location.origin.includes("8080")
-    ? `${location.protocol === "http:" ? "ws:" : "wss:"}//${location.host}wisp/`
+    ? `${location.protocol === "http:" ? "ws:" : "wss:"}//wisp.terbiumon.top/wisp/`
     : "wss://wisp.terbiumon.top/wisp/";
 
   await connection.setTransport("/epoxy/index.mjs", [{ wisp }]);

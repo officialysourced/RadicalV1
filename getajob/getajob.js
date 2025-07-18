@@ -1,72 +1,12 @@
-// Thanks Zeeless for letting me use your JS
-const Proxy = document.getElementById("proxyIframe");
-const iframe = document.getElementById("game-iframe");
-function toggleFullscreen() {
-    if (!document.fullscreenElement) {
-        if (iframe.requestFullscreen) {
-            iframe.requestFullscreen();
-        } else if (iframe.mozRequestFullScreen) {
-            iframe.mozRequestFullScreen();
-        } else if (iframe.webkitRequestFullscreen) {
-            iframe.webkitRequestFullscreen();
-        } else if (iframe.msRequestFullscreen) {
-            iframe.msRequestFullscreen();
+// Thx Zeeless at boredomearcade for the search.js https://discord.gg/7YAttzMc
+       const urlParams = new URLSearchParams(window.location.search);
+        const encodedUrl = urlParams.get('url');
+
+        if (encodedUrl) {
+            console.log("Encoded URL from query string:", encodedUrl);
+
+            const iframe = document.getElementById("proxyIframe");
+            iframe.src = encodedUrl;
+        } else {
+            console.error("No URL found in the query string.");
         }
-    } else {
-        if (document.exitFullscreen) {
-            document.exitFullscreen();
-        } else if (document.mozCancelFullScreen) {
-            document.mozCancelFullScreen();
-        } else if (document.webkitExitFullscreen) {
-            document.webkitExitFullscreen();
-        } else if (document.msExitFullscreen) {
-            document.msExitFullscreen();
-        }
-    }
-}
-
-
-function refreshIframePRX() {
-    const proxyIframe = document.getElementById("proxyIframe");
-    proxyIframe.src = proxyIframe.contentWindow.location.href;
-}
-
-
-function toggleFullscreenPRX() {
-    const iframe = document.getElementById("proxyIframe");
-
-    if (!document.fullscreenElement) {
-
-        if (iframe.requestFullscreen) {
-            iframe.requestFullscreen();
-        } else if (iframe.mozRequestFullScreen) {
-            iframe.mozRequestFullScreen();
-        } else if (iframe.webkitRequestFullscreen) {
-            iframe.webkitRequestFullscreen();
-        } else if (iframe.msRequestFullscreen) {
-            iframe.msRequestFullscreen();
-        }
-    } else {
-        if (document.exitFullscreen) {
-            document.exitFullscreen();
-        } else if (document.mozCancelFullScreen) {
-            document.mozCancelFullScreen();
-        } else if (document.webkitExitFullscreen) {
-            document.webkitExitFullscreen();
-        } else if (document.msExitFullscreen) {
-            document.msExitFullscreen();
-        }
-    }
-}
-
-
-function refreshIframe() {
-    iframe.src = iframe.contentWindow.location.href;
-}
-function goBack() {
-    Proxy.contentWindow.history.back()
-}
-
-function goForward() {
-    Proxy.contentWindow.history.forward()
-}

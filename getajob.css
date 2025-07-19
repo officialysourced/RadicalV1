@@ -42,7 +42,7 @@ body {
   padding: 0;
   margin: 0;
 }
-/* i asked ai to help me fix the positioning btw so dont get mad  */
+
 @media (max-width: 700px) {
   .leftnavbar {
     flex-direction: row;
@@ -135,7 +135,6 @@ body {
   flex: 0 0 auto;
 }
 
-/* Button styles */
 .search-bar-btn {
   width: 40px;
   height: 40px;

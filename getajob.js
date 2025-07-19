@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   // wisp and transport stuff 
   const connection = new BareMux.BareMuxConnection("/baremux/worker.js");
   const wisp = location.origin.includes("8080")
-    ? `${location.protocol === "http:" ? "ws:" : "wss:"}//${location.host}wisp/`
+    ? `${location.protocol === "http:" ? "ws:" : "wss:"}//${location.host}/wisp/`
     : "wss://wisp.terbiumon.top/wisp/";
 
   await connection.setTransport("/epoxy/index.mjs", [{ wisp }]);
